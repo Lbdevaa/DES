@@ -153,8 +153,11 @@
 		&__bg-img-box
 			height: 70%
 			width: 70%
-			right: auto
-			left: 0
+			&::before
+				right: auto
+				left: -100%
+				width: 320px
+				height: 320px
 		&__bg-img
 			display: none
 		.mfp-close
