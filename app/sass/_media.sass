@@ -13,6 +13,10 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	html,body
+		scroll-padding-top: 70px
+	.header + *
+		margin-top: 100px
 	.header
 		>div
 			grid-template-columns: max-content 1fr
@@ -31,7 +35,7 @@
 		font-size: em(20px)
 
 	.text-bottom-blue
-		border: none
+		// border: none
 
 	.banner
 		padding: 50px 0
@@ -68,7 +72,8 @@
 		&__title
 			max-width: 250px
 			margin-bottom: em(22px)
-
+			.text-bottom-blue
+				border: none
 	.result
 		padding: 0
 		&:hover
@@ -267,11 +272,8 @@
 			margin-bottom: 18px
 		&__title
 			font-size: em(20px)
-			max-width: 220px
+			// max-width: 220px
 			margin-bottom: em(28px)
-		&__btn
-			&::after
-				display: none
 	.about
 		&--main-page
 			margin-bottom: 50px
@@ -349,7 +351,6 @@
 			margin-bottom: 23px
 		&__title
 			font-size: em(20px)
-			max-width: 240px
 		&__text-box
 			font-size: em(14px)
 			li
@@ -419,7 +420,8 @@
 			grid-column: 1
 		&__text
 			margin: 0 0 em(33px)
-
+		&__btn
+			border-radius: 50px
 	/**/
 
 /* Extra Small Devices, Phones */

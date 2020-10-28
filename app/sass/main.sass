@@ -3,9 +3,12 @@
 @import "vars"
 @import "base"
 // @import "icons"
+
 html
   scroll-behavior: smooth
+  scroll-padding-top: 110px
 body
+  scroll-padding-top: 110px
   &.fixed
     overflow: hidden
 .btn
@@ -28,12 +31,22 @@ body
 
 .header
   padding: 8px 0
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 112
+  width: 100vw
+  background-color: rgb(240, 247, 255)
+  + *
+    margin-top: 115px
   >div
     grid-template-columns: max-content 1fr max-content
     grid-gap: 35px
     align-items: end
   &__logo
     max-width: 165px
+  &__logo-box
+    z-index: 112
   &__btn
     font-weight: 500
     line-height: 1.25
@@ -50,6 +63,8 @@ body
       width: 48px
       height: 48px
       margin-right: 10px
+      position: relative
+      z-index: 111
       &:last-of-type
   &__btns-mobile
     justify-self: end
@@ -58,32 +73,53 @@ body
   display: none
   position: fixed
   width: 100vw
-  height: 90vh
+  height: 100vh
   left: 0
   right: 0
   bottom: 0
-  top: 10vh
-  background-color: $lBlue
-  z-index: 111
+  background-color: #f0f7ff
+  z-index: 1
   display: none
+  overflow: hidden
+  &::before
+    content: ''
+    position: absolute
+    top: -15%
+    left: -30%
+    width: 690px
+    height: 690px
+    background: url(../img/banner-des.svg) no-repeat center center
+    z-index: -1
   &.active
     display: block
-
   &__box
-    align-items: center
     height: inherit
   &__list
-    padding: 0
+    padding: 140px 0 0 55px
+    margin: 0
+    // align-self: center
   &__item
     list-style: none
-    text-align: center
-    margin-bottom: 1.25em
+    margin: 0 0 em(27px)
   &__url
     text-decoration: none
     text-transform: uppercase
-    color: #ffffff
-    font-size: em(18px)
-    font-weight: 400
+    font-weight: 500
+    color: #000000
+    &:hover
+      color: $blue
+      font-weight: 700
+  &__contacts
+    position: absolute
+    left: 20px
+    bottom: 35px
+  &__contact
+    display: block
+    font-size: em(20px)
+    text-decoration: none
+    text-decoration: none
+    color: #000000
+    margin-bottom: rem(13px)
 
 .burger
   border: none
@@ -117,14 +153,18 @@ body
       background-color: $dark
       transition: .15s all ease
   &.active
+    background-color: $dark
     .burger__line
       background-color: transparent
       &::before
+        background-color: #ffffff
         transform: rotate(45deg)
         top: 0
       &::after
+        background-color: #ffffff
         transform: rotate(-45deg)
         bottom: 0
+
 .nav
   justify-self: end
   list-style: none
@@ -356,7 +396,7 @@ body
 
 .results-list
   grid-template-columns: repeat(3,1fr)
-  grid-gap: 20px 15px
+  // grid-gap: 20px 15px
 
 .result
   position: relative
@@ -380,6 +420,7 @@ body
   padding: 26px
   margin: 45px 35px 25px
   transition: .3s ease-in all
+  height: max-content
   &:hover
     background-color: #0773e7
     background: url('../img/result-btn.png') no-repeat center center
@@ -623,12 +664,15 @@ body
       margin-right: 10px
       background: #ffffff
       border: 1px solid #BBD2EF
+      outline: none
       &-active
         border: 1px solid $blue
         background: $blue
 
 .news-container
   overflow: hidden
+  position: relative
+  z-index: 11
 
 .news
   // grid-template-columns: repeat(3, 1fr)

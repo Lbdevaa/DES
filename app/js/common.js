@@ -16,9 +16,12 @@ $(function() {
     $('body').toggleClass('fixed')
   });
 
-  $(".burger-menu__url").click(function () {
-    $(".burger-menu").fadeToggle();
+  $(".mobile-menu__url").click(function () {
+    $(".mobile-menu").fadeToggle();
+    $('body').removeClass('fixed');
+    $(".burger").removeClass("active");
   });
+   
 
   //swiper
   var newsSwiper = new Swiper('.news-container', {
