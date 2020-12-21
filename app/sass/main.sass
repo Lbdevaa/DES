@@ -558,7 +558,8 @@ body
     max-height: 90%
     top: 10px
     height: 90%
-    // object-fit: contain
+    object-fit: contain
+
   &__title
     font-size: em(24px)
     margin: 0 0 em(10px)
@@ -738,6 +739,7 @@ body
     right: 10px
     top: 5px
     height: 95%
+    object-fit: contain
   &__title
     margin: 0 0 em(20px)
   &__btn
@@ -835,8 +837,6 @@ body
       grid-column: 4/7
 
 .articles
-  >div
-    margin-bottom: 80px
   &--main-page
     margin-bottom: 70px
   &__title
@@ -844,6 +844,9 @@ body
     margin: 0 0 em(16px)
   &__news
     margin-bottom: 20px
+
+.articles-container
+  margin-bottom: 80px
 
 .conclusion
   &--main-page
